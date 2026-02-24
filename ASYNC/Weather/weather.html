@@ -9,8 +9,12 @@
 
   <div class="overlay"></div>
 
-  <div class="page-center">
-    <div class="weather-card">
+  <main class="page-center">
+    <section class="weather-card">
+
+      <header class="card-header">
+        <h2>Weather Search</h2>
+      </header>
 
       <div class="search-box">
         <input
@@ -22,10 +26,12 @@
         <button onclick="getWeather()">Search</button>
       </div>
 
-      <div id="output">Search a city to see weather</div>
+      <section id="output">
+        Search a city to see weather
+      </section>
 
-    </div>
-  </div>
+    </section>
+  </main>
 
   <script src="weather.js"></script>
 </body>

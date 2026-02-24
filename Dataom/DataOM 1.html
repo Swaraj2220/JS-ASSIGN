@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorite Icon Toggler</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px 25px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .item-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            font-size: 18px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .favorite-icon {
+            font-size: 22px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .favorite-icon.filled {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <ul class="item-list">
+            <li class="item">
+                <span>Apple</span>
+                <button class="favorite-icon">&#9825;</button>
+            </li>
+            <li class="item">
+                <span>Banana</span>
+                <button class="favorite-icon">&#9825;</button>
+            </li>
+            <li class="item">
+                <span>Orange</span>
+                <button class="favorite-icon">&#9825;</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.favorite-icon')
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('filled')
+                button.innerHTML = button.classList.contains('filled')
+                    ? '&#10084;'
+                    : '&#9825;'
+            })
+        })
+    </script>
+
+</body>
+</html>

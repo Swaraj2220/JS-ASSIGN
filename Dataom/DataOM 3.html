@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emoji Reactor</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            width: 360px;
+            text-align: center;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .title {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .emoji-row {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .emoji-btn {
+            font-size: 32px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: transform 0.15s ease;
+        }
+
+        .emoji-btn:hover {
+            transform: scale(1.2);
+        }
+
+        #result {
+            font-size: 56px;
+            min-height: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1 class="title">How are you feeling today?</h1>
+
+        <div class="emoji-row">
+            <button class="emoji-btn">😀</button>
+            <button class="emoji-btn">😢</button>
+            <button class="emoji-btn">😡</button>
+            <button class="emoji-btn">😍</button>
+        </div>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.emoji-btn')
+        const result = document.getElementById('result')
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                result.textContent = button.textContent
+            })
+        })
+    </script>
+
+</body>
+</html>
